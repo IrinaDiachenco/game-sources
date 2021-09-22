@@ -48,10 +48,15 @@ function finishGame() {
 
 function createRandomCircle() {
     const circle = document.createElement('div')
+    const size = getRandomNumber(10, 60)
 
     circle.classList.add('circle')
-    circle.style.width = '15px'
-    circle.style.height = '15px'
+    circle.style.width = `${size}px`
+    circle.style.height = `${size}px`
 
     board.append(circle)
+}
+
+function getRandomNumber(min, max) {
+    return Math.round(Math.random() * (max - min) + min)
 }
